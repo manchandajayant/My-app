@@ -9,3 +9,11 @@ body {
   text-align: center;
   font-size: 40px;
 }
+
+#image {
+  height: 500px;
+  width: 500px;
+  padding-right: 35%;
+  padding-left: 31.5%;
+  margin-top: 3%;
+}
