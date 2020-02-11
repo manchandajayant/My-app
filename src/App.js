@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.css";
-import { render } from "@testing-library/react";
+import LikeButton from "./components/LikeButton";
+import Form from "./components/Form";
+import FetchPicture from "./components/fetchPicture";
 
 function App() {
   return (
@@ -11,11 +13,13 @@ function App() {
         </nav>
       </header>
       <div>
-        <img id="image" src="nature.png"></img>
+        <FetchPicture id="image" alt="link broken" />
       </div>
-      <div>
-        <input id="comment"></input>
-      </div>
+      <main>
+        <LikeButton />
+        <Form />
+      </main>
+      <div></div>
     </div>
   );
 }
