@@ -12,7 +12,7 @@ export default class Form extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-
+    this.props.addSentence = this.state.sentence;
     console.log(`submitting form with ${this.state.sentence}`);
   };
 
