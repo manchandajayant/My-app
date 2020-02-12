@@ -1,7 +1,8 @@
 import React, {Component} from "react";
 import "./grid.css";
+import Article from "./Article";
 
-export default class fetchPicture extends Component {
+export default class ArticleList extends Component {
   state = {
     loading: true,
     pictures: [],
@@ -28,17 +29,9 @@ export default class fetchPicture extends Component {
       return <div> error! Sorry! </div>;
     } else {
       const ul = this.state.data.map((picture, index) => (
-        <p>
-          <img
-            style={{width: "150px", height: "150px"}}
-            key={index}
-            src={picture.download_url}
-            alt="still loading"
-          />{" "}
-          {picture.author}{" "}
-        </p>
+        <Article author={picture.author} download_url={picture.download_url} />
       ));
-      return <p>{ul}</p>;
+      return <div className="gallery">{ul}</div>;
     }
   }
 }

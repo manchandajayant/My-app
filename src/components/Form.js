@@ -1,21 +1,42 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
 
 export default class Form extends Component {
-  state = {
-    comment: false
+  static propTypes = {
+    addSentence: PropTypes.func.isRequired
   };
 
-  sentence = () => {
-    console.log("hello");
+  state = {
+    sentence: ""
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+
+    console.log(`submitting form with ${this.state.sentence}`);
+  };
+
+  handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
   };
 
   render() {
     return (
-      <div>
-        <input id="comment"></input>
-        <button id="submit" onSubmit={this.sentence}>
-          submit sentence
-        </button>
+      <div className="add-sentence">
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            your two sentences!
+            <input
+              type="text"
+              name="sentence"
+              onChange={this.handleChange}
+              value={this.state.sentence}
+            />
+          </label>
+          <input type="submit" value="Add" />
+        </form>
       </div>
     );
   }

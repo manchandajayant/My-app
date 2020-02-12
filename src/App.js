@@ -1,8 +1,6 @@
 import React from "react";
 import "./App.css";
-import LikeButton from "./components/LikeButton";
-import Form from "./components/Form";
-import FetchPicture from "./components/fetchPicture";
+import PageContainer from "./components/PageContainer";
 
 function App() {
   return (
@@ -13,13 +11,8 @@ function App() {
         </nav>
       </header>
       <div>
-        <FetchPicture id="image" alt="link broken" />
+        <PageContainer id="image" alt="link broken" />
       </div>
-      <main>
-        <LikeButton />
-        <Form />
-      </main>
-      <div></div>
     </div>
   );
 }
