@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import Form from "./Form";
 
 export default class SentencesSection extends Component {
+  static propTypes = {
+    addSentence: PropTypes.func.isRequired
+  };
+
   state = {
     sentence: "",
     count: 0
