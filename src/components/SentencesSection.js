@@ -1,6 +1,5 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import Form from "./Form";
-import PropTypes from "prop-types";
 
 export default class SentencesSection extends Component {
   state = {
@@ -9,14 +8,18 @@ export default class SentencesSection extends Component {
   };
 
   handleSubmitSentence = sentence => {
-    // this.setState()
+    this.setState({
+      sentence,
+      count: 1
+    });
   };
 
   render() {
     return (
       <div>
         <h2>Sentence section</h2>
-        <Form />
+        <Form addSentence={this.handleSubmitSentence} />
+        <p>{this.state.sentence}</p>
       </div>
     );
   }
