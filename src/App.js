@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { render } from "@testing-library/react";
+import PageContainer from "./components/PageContainer";
 
 function App() {
   return (
@@ -11,10 +11,7 @@ function App() {
         </nav>
       </header>
       <div>
-        <img id="image" src="nature.png"></img>
-      </div>
-      <div>
-        <input id="comment"></input>
+        <PageContainer id="image" alt="link broken" />
       </div>
     </div>
   );

@@ -4,16 +4,17 @@ body {
 
 #nav {
   border: solid black 2px;
-  background-color: rgb(222, 222, 148);
+  background-color: rgb(61, 61, 61);
   padding-bottom: 2%;
   text-align: center;
   font-size: 40px;
 }
 
 #image {
-  height: 500px;
-  width: 500px;
+  height: 50px;
+  width: 50px;
   padding-right: 35%;
   padding-left: 31.5%;
   margin-top: 3%;
+  flex: 33.33%;
 }
