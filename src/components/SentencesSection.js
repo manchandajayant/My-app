@@ -12,6 +12,7 @@ export default class SentencesSection extends Component {
     count: 0,
     story: [],
     finished: []
+
   };
 
   handleSubmitSentence = sentence => {
@@ -20,6 +21,7 @@ export default class SentencesSection extends Component {
       count: 1
     });
   };
+
 
   handleStory = sentence => {
     this.state.story.push(sentence);
@@ -40,6 +42,7 @@ export default class SentencesSection extends Component {
     return (
       <div>
         <h2>Sentence section</h2>
+
         <Form
           addSentence={this.handleSubmitSentence}
           tenSentences={this.handleStory}

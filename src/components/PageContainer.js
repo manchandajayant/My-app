@@ -1,4 +1,5 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
+
 import ArticleList from "./ArticleList";
 import SentencesSection from "./SentencesSection";
 
