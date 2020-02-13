@@ -31,7 +31,7 @@ export default class ArticleList extends Component {
       const ul = this.state.data.map((picture, index) => (
         <Article author={picture.author} download_url={picture.download_url} />
       ));
-      return <div className="gallery">{ul}</div>;
+      return <div className="gallery">{ul[5]}</div>;
     }
   }
 }

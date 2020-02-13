@@ -1,19 +1,29 @@
+
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 export default class Form extends Component {
   static propTypes = {
-    addSentence: PropTypes.func.isRequired
+    addSentence: PropTypes.func.isRequired,
+    tenSentences: PropTypes.func.isRequired,
+    count: PropTypes.number.isRequired
   };
 
   state = {
-    sentence: ""
+    sentence: "",
+    count: 0
   };
 
   handleSubmit = event => {
     event.preventDefault();
     this.props.addSentence(this.state.sentence);
-    console.log(`submitting form with ${this.state.sentence}`);
+    this.props.tenSentences(this.state.sentence);
+    if (this.props.tenSentences.length === 10) {
+      return <p>{this.props.tenSentences}</p>;
+    } else {
+      this.setState({count: this.state.count + 1});
+    }
+    console.log(`submitting form with ${this.props.tenSentences}`);
   };
 
   handleChange = event => {
