@@ -1,14 +1,14 @@
 import React, { Component } from "react";
+
 import "./grid.css";
 import Article from "./Article";
 
-export default class ArticleList extends Component {
+export default class RoutePicture extends Component {
   state = {
     loading: true,
     pictures: [],
     error: true
   };
-
   componentDidMount() {
     fetch("https://picsum.photos/v2/list")
       .then(response => response.json())
@@ -21,7 +21,6 @@ export default class ArticleList extends Component {
         });
       });
   }
-
   render() {
     if (this.state.loading) {
       return <div> "image loading" </div>;
@@ -31,7 +30,7 @@ export default class ArticleList extends Component {
       const ul = this.state.data.map((picture, index) => (
         <Article author={picture.author} download_url={picture.download_url} />
       ));
-      return <div className="gallery">{ul[10]}</div>;
+      return <div className="gallery">{ul}</div>;
     }
   }
 }

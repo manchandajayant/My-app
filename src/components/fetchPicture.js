@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import "./grid.css";
 
 export default class fetchPicture extends Component {
@@ -30,7 +30,7 @@ export default class fetchPicture extends Component {
       const ul = this.state.data.map((picture, index) => (
         <p>
           <img
-            style={{width: "150px", height: "150px"}}
+            style={{ width: "450px", height: "450px" }}
             key={index}
             src={picture.download_url}
             alt="still loading"
