@@ -11,8 +11,7 @@ export default class SentencesSection extends Component {
     sentence: "",
     count: 0,
     story: [],
-    finished: []
-
+    finished: ""
   };
 
   handleSubmitSentence = sentence => {
@@ -21,7 +20,6 @@ export default class SentencesSection extends Component {
       count: 1
     });
   };
-
 
   handleStory = sentence => {
     this.state.story.push(sentence);
@@ -34,21 +32,25 @@ export default class SentencesSection extends Component {
   };
 
   handleFinishedStory = story => {
-    this.setState({finished: this.state.story});
-    return <p>YOU finished this STORY: {this.state.finished}</p>;
+    const storyComplete = story.join(" ");
+    this.setState({finished: storyComplete});
+
+    console.log("Finished story:", storyComplete);
   };
 
   render() {
     return (
       <div>
         <h2>Sentence section</h2>
-
         <Form
           addSentence={this.handleSubmitSentence}
           tenSentences={this.handleStory}
         />
+        <p>{this.state.story[this.state.story.length - 1]}</p>
         <p>
-          {this.state.sentence} {this.state.story[this.state.story.length - 1]}
+          {this.state.finished
+            ? `YOU finished this STORY: ${this.state.finished}`
+            : null}
         </p>
       </div>
     );
